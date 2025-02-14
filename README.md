@@ -27,7 +27,7 @@ For Python, open your computer's command prompt and enter the following lines:
 
 6. Inside the 'backend' folder, open the app.py file with your code editor
 
-7. On line 15, change the section that reads: "root:rick0645" to your own computer's MySQL localhost credentials 
+7. On line 15, change the section that reads: "root:password" to your own computer's MySQL localhost credentials 
 
 (root is usually the user and is likely going to stay the same, and the password is created by the user during the MySQL [Configutaror] installation process)
 
