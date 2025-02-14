@@ -12,7 +12,7 @@ def create_app():
     app = Flask(__name__)
 
     # Configure the app
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:rick0645@localhost/marketplace'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost/marketplace'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['JWT_SECRET_KEY'] = 'skins_marketplace'
 
