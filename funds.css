@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f; /* Dark background */
+    color: #fff; /* Light text color */
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2,
+  h3 {
+    text-align: center;
+    color: #00e5ff; /* Accent color to match homepage */
+  }
+  
+  #cart-items-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #2e2e2e; /* Match product card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #444; /* Divider between items */
+  }
+  
+  .cart-item:last-child {
+    border-bottom: none; /* Remove border for last item */
+  }
+  
+  .cart-item img {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+  
+  .cart-item-details {
+    flex: 1;
+    margin-left: 15px;
+  }
+  
+  .cart-item-title {
+    font-size: 18px;
+    margin: 0 0 5px;
+  }
+  
+  .cart-item-price {
+    color: #00e5ff;
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .cart-item-description {
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .remove-item-button {
+    background-color: #ff4d4f; /* Red for remove button */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .remove-item-button:hover {
+    background-color: #d9363e; /* Darker red on hover */
+  }
+  
+  form {
+    max-width: 500px;
+    margin: 30px auto;
+    background-color: #2e2e2e; /* Match product card background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+  }
+  
+  label {
+    color: #ccc; /* Light text color for labels */
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #444; /* Darker input background */
+    color: white;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #007bff; /* Match primary button color from homepage */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .back-to-home-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #28a745; /* Green button to distinguish from the checkout */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .back-to-home-button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  

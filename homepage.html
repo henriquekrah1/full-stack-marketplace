@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skins</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="notifications.css">
+    <script src="notifications.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://i.imgur.com/ze6XxZH.png" alt="Logo" />
+            </div>
+            <div class="nav-links">
+                <a href="homepage.html">Market</a>
+                <a id="create-listing" href="createlisting.html">Create Listing</a>
+                <a href="savedlistings.html">Saved Listings</a>
+                <a href="#" id="add-funds-btn">Add Funds</a>
+            </div>
+            <div class="user-actions">
+                <div class="profile-dropdown">
+                    <button class="profile-icon">Account</button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a id="login-btn" href="#">Login</a>
+                        <a id="create-account-btn" href="#">Create Account</a>
+                        <a id="my-account-btn" href="myaccount.html" style="display:none;">My Account</a>
+                        <a id="logout-btn" href="#" style="display:none;">Log Out</a>
+                    </div>
+                </div>
+                <div class="cart-dropdown">
+                    <button class="cart-button" id="cart-btn">Cart</button>
+                    <div class="dropdown-content" id="cart-dropdown" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search & Filter Section -->
+    <div class="filters-container">
+        <input type="text" class="search-bar" placeholder="Search market" />
+        <div class="price-filter">
+            <input type="text" placeholder="From" />
+            <input type="text" placeholder="To" />
+            <button class="refresh-btn">↻</button>
+        </div>
+        <div class="sort-filter">
+            <label for="sort">Sort by:</label>
+            <select id="sort">
+                <option value="recommended">Recommended for you</option>
+                <option value="priceLow">Price: Low to High</option>
+                <option value="priceHigh">Price: High to Low</option>
+                <option value="rarity">Rarity</option>
+            </select>
+        </div>
+        <div class="weapon-filter">
+            <label for="weapon-type">Weapon Type:</label>
+            <select id="weapon-type">
+                <option value="">All</option>
+                <option value="rifle">Rifle</option>
+                <option value="pistol">Pistol</option>
+                <option value="shotgun">Shotgun</option>
+                <option value="sniper">Sniper</option>
+                <option value="knife">Knife</option>
+            </select>
+        </div>
+        <div class="rarity-filter">
+            <label for="rarity">Rarity:</label>
+            <select id="rarity">
+                <option value="">All</option>
+                <option value="common">Common</option>
+                <option value="rare">Rare</option>
+                <option value="epic">Epic</option>
+                <option value="legendary">Legendary</option>
+            </select>
+        </div>
+    </div>
+
+
+    <!-- Product Grid Section -->
+    <main>
+        <section class="product-grid" id="marketplace">
+            <!-- Existing products -->
+            <!-- Epic Rifle -->
+            <div class="product-card" data-weapon-type="rifle" data-rarity="epic" data-price="6199.00" data-product-id="1" data-description="A powerful rifle with epic rarity.">
+                <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwT09S5g4yCmfDLP7LWnn8f6pIl2-yYp9SnjA23-BBuNW-iLI-XJgFsZQyG_VW2lOq918e8uszLn2wj5HeAvkVdtQ/218x218" alt="Epic Rifle" />
+                <div class="product-info">
+                    <p class="title">Epic Rifle</p>
+                    <p class="price">$6,199.00</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Epic Rifle', price: 6199.00}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Legendary Sniper -->
+            <div class="product-card" data-weapon-type="sniper" data-rarity="legendary" data-price="11836.73" data-product-id="2" data-description="A legendary sniper with unmatched precision.">
+                <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17P7NdTRH-t26q4SZlvD7PYTQgXtu5Mx2gv2PrdSijAWwqkVtN272JIGdJw46YVrYqVO3xLy-gJC9u5vByCBh6ygi7WGdwUKTYdRD8A/218x218" alt="Legendary Sniper" />
+                <div class="product-info">
+                    <p class="title">Legendary Sniper</p>
+                    <p class="price">$11,836.73</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Legendary Sniper', price: 11836.73}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Common Shotgun -->
+            <div class="product-card" data-weapon-type="shotgun" data-rarity="common" data-price="5726.73" data-product-id="3" data-description="A reliable shotgun with common rarity.">
+                <img src="https://i.imgur.com/3ripUog.png" alt="Common Shotgun" />
+                <div class="product-info">
+                    <p class="title">Common Shotgun</p>
+                    <p class="price">$5,726.73</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Common Shotgun', price: 5726.73}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Rare Knife -->
+            <div class="product-card" data-weapon-type="knife" data-rarity="rare" data-price="2548.67" data-product-id="4" data-description="A rare knife with exceptional sharpness.">
+                <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf0ebcZThQ6tCvq4GGqOT1I6vZn3lU18hwmOvN8IXvjVCLqSwwOj6rYJiTdQE7NQuEqFS7x7q9hpHovZrPmnpq6HJ24XmJzUDjgBpOarBug_fKVxzAUBpccViW/218x218" alt="Rare Knife" />
+                <div class="product-info">
+                    <p class="title">Rare Knife</p>
+                    <p class="price">$2,548.67</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Rare Knife', price: 2548.67}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Common Pistol -->
+            <div class="product-card" data-weapon-type="pistol" data-rarity="common" data-price="600.55" data-product-id="5" data-description="A common pistol with reliable performance.">
+                <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovrG1eVcwg8zLZAJSvteJkoySnvnzDL_Dk2pc18h0juDU-MKtjla1r0Q9N2mid4-QcwJtM1_Z_Fm5yejrgpK9usnNmCBmvyZz5n_ZgVXp1upvFaAH/218x218" alt="Common Pistol" />
+                <div class="product-info">
+                    <p class="title">Common Pistol</p>
+                    <p class="price">$600.55</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Common Pistol', price: 600.55}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            <!-- Add more predefined products as needed -->
+            <div class="product-card" data-weapon-type="pistol" data-rarity="legendary" data-price="9999.99" data-product-id="1" data-description="The Starcade boasts unparalleled accuracy and an iconic look.">
+                <img src="https://i.imgur.com/8qlsDPs.png" alt="Starcade Legendary Pistol" />
+                <div class="product-info">
+                    <p class="title">Starcade Legendary Pistol</p>
+                    <p class="price">$9,999.99</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Starcade Legendary Pistol', price: 9999.99}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="knife" data-rarity="epic" data-price="12875.80" data-product-id="2" data-description="The Huntsman combines raw strength and precision for devastating close combat.">
+                <img src="https://i.imgur.com/lfZwV5h.png" alt="Huntsman Epic Knife" />
+                <div class="product-info">
+                    <p class="title">Huntsman Epic Knife</p>
+                    <p class="price">$12,875.80</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Huntsman Epic Knife', price: 12875.80}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="shotgun" data-rarity="common" data-price="3639.46" data-product-id="3" data-description="A reliable shotgun with common rarity.">
+                <img src="https://i.imgur.com/tglw9FE.png" alt="Common Shotgun" />
+                <div class="product-info">
+                    <p class="title">Common Shotgun</p>
+                    <p class="price">$3,639.46</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Common Shotgun', price: 3639.46}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+
+            
+            <div class="product-card" data-weapon-type="rifle" data-rarity="legendary" data-price="12350.99" data-product-id="5" data-description="The Black Lotus combines raw power and sleek aesthetics for the ultimate shooting experience.">
+                <img src="https://i.imgur.com/CUARkd4.png" alt="Black Lotus Legendary Rifle" />
+                <div class="product-info">
+                    <p class="title">Black Lotus Legendary Rifle</p>
+                    <p class="price">$12,350.99</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Black Lotus Legendary Rifle', price: 12350.99}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="pistol" data-rarity="rare" data-price="4523.30" data-product-id="6" data-description="The Water Elemental delivers smooth handling and reliable performance in any situation.">
+                <img src="https://i.imgur.com/Szx6rq6.png" alt="Water Elemental Rare Pistol" />
+                <div class="product-info">
+                    <p class="title">Water Elemental Rare Pistol</p>
+                    <p class="price">$4,523.30</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Water Elemental Rare Pistol', price: 4523.30}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="knife" data-rarity="legendary" data-price="14999.99" data-product-id="7" data-description="The Fade is a masterpiece of craftsmanship, offering a razor-sharp blade and unmatched elegance.">
+                <img src="https://i.imgur.com/keMycQt.png" alt="Fade Legendary Knife" />
+                <div class="product-info">
+                    <p class="title">Fade Legendary Knife</p>
+                    <p class="price">$14,999.99</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Fade Legendary Knife', price: 14999.99}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="shotgun" data-rarity="rare" data-price="6458.48" data-product-id="8" data-description="A reliable shotgun with rare rarity.">
+                <img src="https://i.imgur.com/hhwiDeS.png" alt="Rare Shotgun" />
+                <div class="product-info">
+                    <p class="title">Rare Shotgun</p>
+                    <p class="price">$6,458.48</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Rare Shotgun', price: 6458.48}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="sniper" data-rarity="common" data-price="15000.50" data-product-id="9" data-description="A reliable common sniper rifle for basic needs.">
+                <img src="https://i.imgur.com/Wf2wS4u.png" alt="Common Reliable Sniper" />
+                <div class="product-info">
+                    <p class="title">Common Reliable Sniper</p>
+                    <p class="price">$15,000.50</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Common Reliable Sniper', price: 15000.50}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="rifle" data-rarity="epic" data-price="9025.30" data-product-id="10" data-description="The Akihabara Accept merges style and power, ready for any epic confrontation.">
+                <img src="https://i.imgur.com/vE9iP1N.png" alt="Akihabara Accept Epic Rifle" />
+                <div class="product-info">
+                    <p class="title">Akihabara Accept Epic Rifle</p>
+                    <p class="price">$9,025.30</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Akihabara Accept Epic Rifle', price: 9025.30}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="knife" data-rarity="rare" data-price="8275.99" data-product-id="11" data-description="The Bayonet offers classic design with a deadly edge, ideal for combat.">
+                <img src="https://i.imgur.com/PoH5nur.png" alt="Bayonet Rare Knife" />
+                <div class="product-info">
+                    <p class="title">Bayonet Rare Knife</p>
+                    <p class="price">$8,275.99</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Bayonet Rare Knife', price: 8275.99}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+
+            
+            <div class="product-card" data-weapon-type="sniper" data-rarity="epic" data-price="45000.00" data-product-id="13" data-description="An epic sniper rifle with enhanced accuracy for long-range combat.">
+                <img src="https://i.imgur.com/2KHFto2.png" alt="Epic Long-Range Sniper" />
+                <div class="product-info">
+                    <p class="title">Epic Long-Range Sniper</p>
+                    <p class="price">$45,000.00</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Epic Long-Range Sniper', price: 45000.00}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="rifle" data-rarity="common" data-price="1890.99" data-product-id="14" data-description="The Bulldozer is a basic yet sturdy rifle, perfect for newcomers.">
+                <img src="https://i.imgur.com/tlA1IxU.png" alt="Bulldozer Common Rifle" />
+                <div class="product-info">
+                    <p class="title">Bulldozer Common Rifle</p>
+                    <p class="price">$1,890.99</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Bulldozer Common Rifle', price: 1890.99}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="shotgun" data-rarity="legendary" data-price="8789.67" data-product-id="15" data-description="A reliable shotgun with legendary rarity.">
+                <img src="https://i.imgur.com/13lMvHN.png" alt="Legendary Shotgun" />
+                <div class="product-info">
+                    <p class="title">Legendary Shotgun</p>
+                    <p class="price">$8,789.67</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Legendary Shotgun', price: 8789.67}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="knife" data-rarity="rare" data-price="8450.40" data-product-id="16" data-description="The Doppler shimmers with a mesmerizing pattern, striking fear into enemies.">
+                <img src="https://i.imgur.com/b5bCxGM.png" alt="Doppler Rare Knife" />
+                <div class="product-info">
+                    <p class="title">Doppler Rare Knife</p>
+                    <p class="price">$8,450.40</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Doppler Rare Knife', price: 8450.40}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="pistol" data-rarity="legendary" data-price="10500.00" data-product-id="17" data-description="The Olympus is a masterpiece, bringing exceptional firepower with every shot.">
+                <img src="https://i.imgur.com/yigKetI.png" alt="Olympus Legendary Pistol" />
+                <div class="product-info">
+                    <p class="title">Olympus Legendary Pistol</p>
+                    <p class="price">$10,500.00</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Olympus Legendary Pistol', price: 10500.00}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="rifle" data-rarity="epic" data-price="8749.50" data-product-id="18" data-description="The Poseidon brings unmatched firepower, perfect for taking down any enemy.">
+                <img src="https://i.imgur.com/VmBRTpI.png" alt="Poseidon Epic Rifle" />
+                <div class="product-info">
+                    <p class="title">Poseidon Epic Rifle</p>
+                    <p class="price">$8,749.50</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Poseidon Epic Rifle', price: 8749.50}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="shotgun" data-rarity="common" data-price="5673.67" data-product-id="19" data-description="A reliable shotgun with common rarity.">
+                <img src="https://i.imgur.com/Odv2lHu.png" alt="Common Shotgun" />
+                <div class="product-info">
+                    <p class="title">Common Shotgun</p>
+                    <p class="price">$5,673.67</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Common Shotgun', price: 5673.67}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="pistol" data-rarity="epic" data-price="7649.50" data-product-id="20" data-description="The Kumicho Dragon brings precision and power, wrapped in a stunning design.">
+                <img src="https://i.imgur.com/rAiJCSe.png" alt="Kumicho Dragon Epic Pistol" />
+                <div class="product-info">
+                    <p class="title">Kumicho Dragon Epic Pistol</p>
+                    <p class="price">$7,649.50</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Kumicho Dragon Epic Pistol', price: 7649.50}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="sniper" data-rarity="legendary" data-price="49999.99" data-product-id="21" data-description="A legendary sniper with unmatched precision and sleek design.">
+                <img src="https://i.imgur.com/MjrRmKq.png" alt="Legendary Precision Sniper" />
+                <div class="product-info">
+                    <p class="title">Legendary Precision Sniper</p>
+                    <p class="price">$49,999.99</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Legendary Precision Sniper', price: 49999.99}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="rifle" data-rarity="rare" data-price="5210.20" data-product-id="22" data-description="The Hot Rod is designed for those who need a fast and accurate rifle in the heat of battle.">
+                <img src="https://i.imgur.com/qStY6AD.png" alt="Hot Rod Rare Rifle" />
+                <div class="product-info">
+                    <p class="title">Hot Rod Rare Rifle</p>
+                    <p class="price">$5,210.20</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Hot Rod Rare Rifle', price: 5210.20}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="shotgun" data-rarity="epic" data-price="5839.46" data-product-id="23" data-description="A reliable shotgun with epic rarity.">
+                <img src="https://i.imgur.com/akA19iy.png" alt="Epic Shotgun" />
+                <div class="product-info">
+                    <p class="title">Epic Shotgun</p>
+                    <p class="price">$5,839.46</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Epic Shotgun', price: 5839.46}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="knife" data-rarity="common" data-price="3450.25" data-product-id="24" data-description="The Tiger Tooth is a basic yet fierce blade, ready for any skirmish.">
+                <img src="https://i.imgur.com/rTwyUER.png" alt="Tiger Tooth Common Knife" />
+                <div class="product-info">
+                    <p class="title">Tiger Tooth Common Knife</p>
+                    <p class="price">$3,450.25</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Tiger Tooth Common Knife', price: 3450.25}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="sniper" data-rarity="legendary" data-price="72000.00" data-product-id="25" data-description="A legendary sniper with explosive rounds for unparalleled power.">
+                <img src="https://i.imgur.com/bnTMte7.png" alt="Legendary Power Sniper" />
+                <div class="product-info">
+                    <p class="title">Legendary Power Sniper</p>
+                    <p class="price">$72,000.00</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Legendary Power Sniper', price: 72000.00}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="pistol" data-rarity="rare" data-price="5120.99" data-product-id="26" data-description="The Tilted stands out for its quick response and stylish design.">
+                <img src="https://i.imgur.com/cDBszmP.png" alt="Tilted Rare Pistol" />
+                <div class="product-info">
+                    <p class="title">Tilted Rare Pistol</p>
+                    <p class="price">$5,120.99</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Tilted Rare Pistol', price: 5120.99}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="shotgun" data-rarity="rare" data-price="5739.46" data-product-id="27" data-description="A reliable shotgun with rare rarity.">
+                <img src="https://i.imgur.com/DHiYNtt.png" alt="Rare Shotgun" />
+                <div class="product-info">
+                    <p class="title">Rare Shotgun</p>
+                    <p class="price">$5,739.46</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Rare Shotgun', price: 5739.46}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="knife" data-rarity="epic" data-price="11250.50" data-product-id="28" data-description="The Gamma Doppler radiates with a hypnotic sheen, perfect for skilled warriors.">
+                <img src="https://i.imgur.com/m6ePSkd.png" alt="Gamma Doppler Epic Knife" />
+                <div class="product-info">
+                    <p class="title">Gamma Doppler Epic Knife</p>
+                    <p class="price">$11,250.50</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Gamma Doppler Epic Knife', price: 11250.50}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="rifle" data-rarity="legendary" data-price="13500.00" data-product-id="29" data-description="The Icarus Fell delivers legendary precision and devastating damage with every shot.">
+                <img src="https://i.imgur.com/1iji6Nq.png" alt="Icarus Fell Legendary Rifle" />
+                <div class="product-info">
+                    <p class="title">Icarus Fell Legendary Rifle</p>
+                    <p class="price">$13,500.00</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Icarus Fell Legendary Rifle', price: 13500.00}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="shotgun" data-rarity="epic" data-price="6578.48" data-product-id="30" data-description="A reliable shotgun with epic rarity.">
+                <img src="https://i.imgur.com/pr45Z13.png" alt="Epic Shotgun" />
+                <div class="product-info">
+                    <p class="title">Epic Shotgun</p>
+                    <p class="price">$6,578.48</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Epic Shotgun', price: 6578.48}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="knife" data-rarity="epic" data-price="11999.99" data-product-id="31" data-description="The Marble Fade showcases a stunning gradient finish, combining style with lethal sharpness.">
+                <img src="https://i.imgur.com/wBRKkcS.png" alt="Marble Fade Epic Knife" />
+                <div class="product-info">
+                    <p class="title">Marble Fade Epic Knife</p>
+                    <p class="price">$11,999.99</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Marble Fade Epic Knife', price: 11999.99}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            
+            <div class="product-card" data-weapon-type="rifle" data-rarity="rare" data-price="4980.75" data-product-id="33" data-description="The Inheritance offers precision and reliability, making it a favorite among sharpshooters.">
+                <img src="https://i.imgur.com/vkkYOte.png" alt="Inheritance Rare Rifle" />
+                <div class="product-info">
+                    <p class="title">Inheritance Rare Rifle</p>
+                    <p class="price">$4,980.75</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Inheritance Rare Rifle', price: 4980.75}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="shotgun" data-rarity="rare" data-price="5756.73" data-product-id="34" data-description="A reliable shotgun with rare rarity.">
+                <img src="https://i.imgur.com/aN9loK3.png" alt="Rare Shotgun" />
+                <div class="product-info">
+                    <p class="title">Rare Shotgun</p>
+                    <p class="price">$5,756.73</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Rare Shotgun', price: 5756.73}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="sniper" data-rarity="common" data-price="18000.75" data-product-id="35" data-description="A common sniper rifle with a standard scope for precision.">
+                <img src="https://i.imgur.com/8gU7OpJ.png" alt="Common Scoped Sniper" />
+                <div class="product-info">
+                    <p class="title">Common Scoped Sniper</p>
+                    <p class="price">$18,000.75</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Common Scoped Sniper', price: 18000.75}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+
+            
+            <div class="product-card" data-weapon-type="sniper" data-rarity="rare" data-price="39000.45" data-product-id="6" data-description="A lightweight rare sniper rifle for quick mobility in combat.">
+                <img src="https://i.imgur.com/0CDcfVv.png" alt="Rare Lightweight Sniper" />
+                <div class="product-info">
+                    <p class="title">Rare Lightweight Sniper</p>
+                    <p class="price">$39,000.45</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Rare Lightweight Sniper', price: 39000.45}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="sniper" data-rarity="legendary" data-price="64000.50" data-product-id="9" data-description="A legendary sniper with digital tracking technology for precision.">
+                <img src="https://i.imgur.com/5BPZJLV.png" alt="Legendary Tracking Sniper" />
+                <div class="product-info">
+                    <p class="title">Legendary Tracking Sniper</p>
+                    <p class="price">$64,000.50</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Legendary Tracking Sniper', price: 64000.50}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="sniper" data-rarity="epic" data-price="48000.00" data-product-id="10" data-description="An epic sniper rifle with heat-sensing rounds for advanced combat.">
+                <img src="https://i.imgur.com/f49WoEf.png" alt="Epic Heat-Sensing Sniper" />
+                <div class="product-info">
+                    <p class="title">Epic Heat-Sensing Sniper</p>
+                    <p class="price">$48,000.00</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Epic Heat-Sensing Sniper', price: 48000.00}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="pistol" data-rarity="epic" data-price="7820.45" data-product-id="8" data-description="The Vogue impresses with cutting-edge features and superior handling.">
+                <img src="https://i.imgur.com/CzBSqxp.png" alt="Vogue Epic Pistol" />
+                <div class="product-info">
+                    <p class="title">Vogue Epic Pistol</p>
+                    <p class="price">$7,820.45</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Vogue Epic Pistol', price: 7820.45}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="rifle" data-rarity="common" data-price="2150.45" data-product-id="1" data-description="The Asiimov is a dependable rifle perfect for everyday combat scenarios.">
+                <img src="https://i.imgur.com/viiNjtJ.png" alt="Asiimov Common Rifle" />
+                <div class="product-info">
+                    <p class="title">Asiimov Common Rifle</p>
+                    <p class="price">$2,150.45</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Asiimov Common Rifle', price: 2150.45}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="rifle" data-rarity="epic" data-price="8299.99" data-product-id="9" data-description="The Aqua Terrace is an expertly crafted rifle with epic water-themed aesthetics.">
+                <img src="https://i.imgur.com/pN2ZTxO.png" alt="Aqua Terrace Epic Rifle" />
+                <div class="product-info">
+                    <p class="title">Aqua Terrace Epic Rifle</p>
+                    <p class="price">$8,299.99</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Aqua Terrace Epic Rifle', price: 8299.99}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            
+            <div class="product-card" data-weapon-type="sniper" data-rarity="rare" data-price="31000.25" data-product-id="38" data-description="A rare sniper rifle designed for durability and performance.">
+                <img src="https://i.imgur.com/tUKmEAD.png" alt="Rare Durable Sniper" />
+                <div class="product-info">
+                    <p class="title">Rare Durable Sniper</p>
+                    <p class="price">$31,000.25</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Rare Durable Sniper', price: 31000.25}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="pistol" data-rarity="common" data-price="1234.99" data-product-id="39" data-description="The Code Red is a simple yet effective sidearm for any close-range encounter.">
+                <img src="https://i.imgur.com/fQdGI6B.png" alt="Code Red Common Pistol" />
+                <div class="product-info">
+                    <p class="title">Code Red Common Pistol</p>
+                    <p class="price">$1,234.99</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Code Red Common Pistol', price: 1234.99}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-weapon-type="sniper" data-rarity="epic" data-price="42000.89" data-product-id="40" data-description="An epic sniper rifle with precision-engineered recoil control.">
+                <img src="https://i.imgur.com/Sjnnps2.png" alt="Epic Recoil Sniper" />
+                <div class="product-info">
+                    <p class="title">Epic Recoil Sniper</p>
+                    <p class="price">$42,000.89</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({title: 'Epic Recoil Sniper', price: 42000.89}); event.stopPropagation();">Buy Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pop-Up Notification Container -->
+    <div id="popup-notification-container" class="popup-container"></div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Selected items (0)</p>
+        <button class="target-btn">Target | Bid</button>
+        <button class="buy-btn">Buy</button>
+    </footer>
+
+    <script>
+        // Load listings from LocalStorage
+        const listings = JSON.parse(localStorage.getItem('listings')) || [];
+
+        // Get the marketplace container
+        const marketplace = document.getElementById('marketplace');
+
+        // Loop through the listings and display them
+        listings.forEach(listing => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('product-card');
+
+            itemDiv.innerHTML = `
+                <img src="${listing.imageUrl}" alt="${listing.title}" class="product-image">
+                <div class="product-info">
+                    <h3 class="title">${listing.title}</h3>
+                    <p class="price">$${parseFloat(listing.price).toLocaleString()}</p>
+                    <button class="buy-now" onclick="buyNowFromHomepage({ title: '${listing.title}', price: ${listing.price} });">Buy Now</button>
+                </div>
+            `;
+
+            // Add click event to navigate to the product page
+            itemDiv.addEventListener('click', function() {
+                window.location.href = `product.html?title=${encodeURIComponent(listing.title)}&image=${encodeURIComponent(listing.imageUrl)}&price=${encodeURIComponent(listing.price)}&description=${encodeURIComponent(listing.description)}`;
+            });
+
+            marketplace.appendChild(itemDiv);
+        });
+
+        function buyNowFromHomepage(product) {
+            // Handle the "Buy Now" functionality
+            console.log('Buying product:', product);
+            // Add your implementation here
+        }
+    </script>
+
+    <script src="homepage.js"></script>
+    <script src="notifications.js"></script>
+
+    
+</body>
+</html>

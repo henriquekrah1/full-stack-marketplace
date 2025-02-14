@@ -1,0 +1,38 @@
+/* Popup notification container */
+.popup-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 300px;
+  z-index: 10000; /* Higher z-index to ensure it appears above other elements */
+  font-family: Arial, sans-serif;
+}
+
+/* Individual notification item */
+.notification-item {
+  background-color: #f9f9f9;
+  color: #333; /* Dark text color for contrast */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Styling for read notifications */
+.notification-item.read {
+  opacity: 0.6;
+}
+
+/* Ensure notification text is readable */
+.notification-item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Add hover effect for notification items */
+.notification-item:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}

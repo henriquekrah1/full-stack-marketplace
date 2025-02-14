@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f; /* Dark background to match the website */
+    color: #f4f4f4; /* Light text color for contrast */
+    margin: 0;
+    padding: 20px;
+}
+
+.product-detail {
+    max-width: 600px;
+    margin: auto;
+    background: #2e2e2e; /* Dark background for product detail */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center the text */
+}
+
+h1, h2 {
+    color: #fff; /* White color for headings */
+    margin-bottom: 20px; /* Spacing below the title */
+}
+
+img {
+    max-width: 100%; /* Responsive image */
+    height: auto;    /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below image */
+}
+
+/* Button styles */
+button {
+    background-color: #007bff; /* Blue background */
+    color: white;              /* White text */
+    border: none;              /* No border */
+    padding: 10px 15px;       /* Padding for button size */
+    border-radius: 5px;       /* Rounded corners */
+    cursor: pointer;           /* Pointer cursor on hover */
+    font-size: 16px;           /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    margin-top: 20px;         /* Space above the button */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.buy-button {
+    background-color: #28a745; /* Green background for buy button */
+}
+
+.buy-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px; /* Adjust spacing as needed */
+}
+
+.back-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}

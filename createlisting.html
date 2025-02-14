@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Listing</title>
+    <link rel="stylesheet" href="createlisting.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create a Listing</h1>
+        <form id="listing-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="type">Type:</label>
+            <select id="type" name="type" required>
+                <option value="rifle">Rifle</option>
+                <option value="pistol">Pistol</option>
+                <option value="shotgun">Shotgun</option>
+                <option value="sniper">Sniper</option>
+                <option value="knife">Knife</option>
+            </select>
+
+            <label for="rarity">Rarity:</label>
+            <select id="rarity" name="rarity" required>
+                <option value="common">Common</option>
+                <option value="rare">Rare</option>
+                <option value="epic">Epic</option>
+                <option value="legendary">Legendary</option>
+            </select>
+
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+
+            <button type="submit">Create Listing</button>
+        </form>
+    </div>
+
+    <script src="createlisting.js"></script>
+</body>
+</html>

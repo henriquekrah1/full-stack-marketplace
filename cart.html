@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body>
+    <h2>Your Cart</h2>
+    <div id="cart-items-container"></div>
+    <h3>Total: $<span id="total-price">0.00</span></h3>
+
+    <!-- Funds and Checkbox Container -->
+    <div id="use-funds-container" class="funds-container" style="display: none;">
+      <p class="funds-message">Available Funds: $<span id="available-funds">0.00</span></p>
+      <label class="funds-checkbox-label">
+        <input type="checkbox" id="use-funds-checkbox" /> Use account funds
+      </label>
+    </div>
+
+    <!-- Payment Form -->
+    <h2>Payment Information</h2>
+    <form id="payment-form">
+      <label for="card-number">Card Number</label>
+      <input type="text" id="card-number" required />
+
+      <label for="expiry">Expiry Date</label>
+      <input type="text" id="expiry" placeholder="MM/YY" required />
+
+      <label for="cvv">CVV</label>
+      <input type="text" id="cvv" required />
+
+      <button type="submit" id="checkout-button">Purchase</button>
+    </form>
+
+    <!-- Back to Home Button -->
+    <button class="back-to-home-button" onclick="window.location.href='homepage.html'">Back to Home</button>
+
+    <script src="cart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1f1f1f;
+    color: #fff;
+  }
+  
+  header {
+    background-color: #2e2e2e;
+    padding: 20px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo h1 {
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  .nav-links a {
+    margin-left: 20px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .nav-links a:hover {
+    color: #00e5ff;
+  }
+  
+  .user-actions {
+    display: flex;
+  }
+  
+  .login-btn,
+  .signup-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover,
+  .signup-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .filter-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+  }
+  
+  .search-bar {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .filters-container > div {
+    flex: 1 1 auto;
+    min-width: 150px;
+  }
+  
+  .price-filter input {
+    width: 100px;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .refresh-btn {
+    padding: 10px;
+    background-color: #00e5ff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sort-filter {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sort-filter select {
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+  
+  .weapon-filter,
+  .rarity-filter {
+    margin-left: 20px;
+  }
+  
+  .weapon-filter select,
+  .rarity-filter select {
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+  
+  main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: center; /* Aligns items vertically */
+    justify-items: center;
+  }
+  
+  .product-grid {
+    
+    max-width: 1200px; /* Limits the overall width of the container */
+    margin: 0 auto; /* Centers the container on the page */
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to fit multiple cards */
+    gap: 20px; /* Space between each product card */
+    justify-content: center;
+
+    width: 250px;
+    
+  }
+  
+  .product-card {
+    position:relative;
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+  }
+  
+  .product-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .product-info {
+    margin-top: 10px;
+  }
+  
+  .price {
+    color: #00e5ff;
+    font-size: 18px;
+  }
+  
+  footer {
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer p {
+    font-size: 18px;
+  }
+  
+  .target-btn,
+  .buy-btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .target-btn {
+    background-color: orange;
+  }
+  
+  .buy-btn {
+    background-color: #00e5ff;
+  }
+    .profile-icon {
+      width:40px;
+      height:40px;
+      cursor: pointer;
+    }
+  
+    .profile-dropdown {
+      position:relative;
+      display:inline-block;
+    }
+  
+    .dropdown-content {
+      display:none;
+      position:absolute;
+      right:0;
+      background: color #f9f9f9;
+      min-width:160px;
+      box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index:1;
+    }
+  
+    .dropdown-content a {
+      color:black;
+      padding:12px 16px;
+      text-decoration:none;
+      display:block;
+      background-color:#fff;
+    }
+  
+    .dropdown-content a:hover {
+      background-color: #1f1f1f;
+    }
+  
+    .profile-dropdown:hover .dropdown-content {
+      display:block;
+    }
+  
+    .save-icon-container {
+      position:absolute;
+      top:10px;
+      right:10px;
+    }
+  
+    .save-icon {
+      width:20px !important;
+      height:20px !important;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+  
+    .save-icon:hover {
+      transform: scale(1.2);
+    }
+
+    .save-icon {
+      filter: grayscale(100%);
+      opacity: 0.5;
+      cursor:pointer;
+      transition: opacity 0.3s, filter 0.3s;
+    }
+
+    .save-icon.saved {
+      filter:none;
+      opacity: 1;
+    }
+
+    .logo img {
+      width: 210px; /* Adjust the width as needed */
+      height: auto; /* Maintains the aspect ratio */
+  }
+  
+  .home-button {
+    background-color: #0361b8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* Ensures the text isn't underlined */
+    transition: background-color 0.3s;
+    display: inline-block; /* Ensures the button acts like an inline element */
+  }
+  
+  .home-button:hover {
+    background-color: #3b5fff; /* Darker shade on hover */
+  }
+  
+  .remove-button {
+    background-color: #ff4c4c; /* Red background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 8px 16px; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.remove-button:hover {
+    background-color: #d63333; /* Darker red on hover */
+}
+
+/* Add this to savedlistings.css */
+
+#savedListingsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between the product cards */
+  justify-content: center; /* Center the product cards */
+}
+
+.product-card {
+  background-color: #2e2e2e;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  width: 200px; /* Adjust the width as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.remove-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+  background-color: #ff1a1a;
+}
+
+/* Styling for the product title */
+.product-card h3 {
+  color: #ffffff; /* Plain white color */
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Styling for the product price */
+.product-card .price {
+  color: #ffffff; /* Plain white color */
+  font-size: 14px;
+  margin-top: 5px;
+}

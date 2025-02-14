@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <header>
+        <h1>Product Details</h1>
+    </header>
+    <main class="product-detail">
+        <h2 id="product-title"></h2>
+        <img id="product-image" src="" alt="Product Image">
+        <p id="product-price"></p>
+        <p id="product-description"></p>
+        <div class="button-container">
+            <button id="buy-now-button" class="buy-button">Buy Now</button>
+            <button id="save-listing-button" class="save-button">Save Listing</button>
+        </div>
+        <button class="back-button" onclick="goBack()">Go Back</button>
+    </main>
+
+    <script>
+        // Function to get URL parameters
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const regex = /([^&=]+)=([^&]*)/g;
+            let m;
+            while (m = regex.exec(queryString)) {
+                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+            return params;
+        }
+
+        // Function to format price with commas
+        function formatPrice(price) {
+            return parseFloat(price).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        }
+
+        // Load product details based on query parameters
+        function loadProductDetails() {
+            const params = getQueryParams();
+            document.getElementById("product-title").innerText = params.title;
+            document.getElementById("product-image").src = params.image;
+            document.getElementById("product-price").innerText = "Price: " + formatPrice(params.price);
+            document.getElementById("product-description").innerText = params.description || "No description available.";
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        window.onload = loadProductDetails;
+    </script>
+    
+    <!-- Include your product.js file -->
+    <script src="product.js"></script>
+</body>
+</html>

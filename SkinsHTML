@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SKINS</title>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+
+    <body>
+        <header>
+            <h1>Skins</h1>
+            <nav class = "navbar">
+                <div class="navdiv">
+                    <div class = "logo"><a href="#">Skins</a></div>
+
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href ="#games">Games</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <button><a href="#">Sign In</a></button>
+                        <button><a href="#">Log In</a></button>
+
+                    
+                     </ul>
+                </div>
+                
+            </nav>
+        </header>
+        <main>
+            <section id="home">
+                <h2> Welcome!</h2>
+                <p> The Skins Marketplace is your ultimate platform for buying, selling, and showcasing digital skins and in-game content. Designed for gamers, collectors, and designers alike, our marketplace allows users to easily trade unique skins without any fees, ensuring a seamless and cost-effective experience.
+
+                    Whether you’re a gamer looking to enhance your collection, a designer eager to share your custom creations, or a seller aiming to profit from your skins, our user-friendly interface and robust features make transactions quick and secure.
+                    
+                    Join our community today and discover the best place to find, sell, and promote digital skins that enhance your gaming experience!
+                    
+                    Feel free to tweak any parts of it to better fit your vision!</p>
+            </section>
+            <section id="about">
+                <h2>About Us</h2>
+                <p>Welcome to The Skins Marketplace, where gamers and creators unite! We are passionate about revolutionizing the way digital skins and in-game content are traded. Our platform allows users to buy, sell, and showcase unique skins without any fees, making trading seamless and enjoyable.
+
+                    Driven by a love for gaming, we aim to empower our community with a user-friendly experience that enhances creativity and individuality. Whether you’re a collector seeking rare items or a designer sharing custom creations, The Skins Marketplace is your go-to destination.
+                    
+                    Join us and discover a vibrant community that celebrates innovation and passion in the gaming world!
+                    </p>
+            </section>
+        
+            <section id="contact">
+                <h1>Contact Us</h1>
+                <p>We’re here to help! At <strong>The Skins Marketplace</strong>, your questions, feedback, and suggestions are important to us. Whether you need assistance with buying, selling, or showcasing your skins, our team is ready to assist you.</p>
+    
+                <p>Feel free to reach out through the following channels:</p>
+                <ul>
+                    <li><strong>Email</strong>: <a href="mailto:support@theskinsmarketplace.com">support@theskinsmarketplace.com</a></li>
+                     <li><strong>Social Media</strong>: Connect with us on <a href="#">Twitter</a>, <a href="#">Instagram</a>, and <a href="#">Facebook</a> for updates and community engagement.</li>
+                    <li><strong>Support Form</strong>: Visit our <a href="#">Support Page</a> to submit a request or report an issue.</li>
+                 </ul>
+
+                 <p>Thank you for being a part of our community! We look forward to hearing from you.</p>
+            </section>
+
+        </main>
+
+
+    </body>
+    
+</html>
+

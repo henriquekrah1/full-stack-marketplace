@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet" href="myaccount.css">
+</head>
+<body>
+    <header>
+        <h1>My Account</h1>
+        <button id="home-button">Home</button> <!-- Moved Home button to the top -->
+    </header>
+    <main>
+        <div class="account-info">
+            <h2>User Information</h2>
+            <p><strong>Username:</strong> <span id="username"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Funds:</strong> $<span id="funds"></span></p>
+        </div>
+        <div class="purchase-history">
+            <h2>Purchase History</h2>
+            <div id="purchase-history" class="history-container"></div>
+        </div>
+    </main>
+    <script src="myaccount.js"></script>
+</body>
+</html>
